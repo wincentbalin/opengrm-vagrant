@@ -1,0 +1,5 @@
+# Vagrant directory
+.vagrant/
+
+# Vagrant log file
+ubuntu-*-console.log
