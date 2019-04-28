@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     config.vm.provider "virtualbox" do |vb|
         vb.gui = false     # we log into here using ssh
         vb.cpus = 2        # my computer has that many
-	vb.memory = 4096   # We will compile a couple of things
+        vb.memory = 6144   # We will compile a couple of things
         vb.customize ["modifyvm", :id, "--ioapic", "on"]
     end
 
