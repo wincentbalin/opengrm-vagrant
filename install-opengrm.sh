@@ -20,7 +20,7 @@
 OPENFST_VERSION=1.7.3
 BAUMWELCH_VERSION=0.2.9
 CATEGORIAL_VERSION=1.3.3
-OPENGRM_NGRAM_VERSION=1.3.7
+NGRAM_VERSION=1.3.7
 THRAX_VERSION=1.3.0
 PYNINI_VERSION=2.0.8
 SFST_VERSION=1.1.0
@@ -64,13 +64,13 @@ rm -rf categorial-$CATEGORIAL_VERSION
 ldconfig
 
 # Install OpenGRM NGram
-wget -q -O - http://www.openfst.org/twiki/pub/GRM/NGramDownload/opengrm-ngram-$OPENGRM_NGRAM_VERSION.tar.gz | tar zxvf -
-cd opengrm-ngram-$OPENGRM_NGRAM_VERSION
+wget -q -O - http://www.openfst.org/twiki/pub/GRM/NGramDownload/ngram-$NGRAM_VERSION.tar.gz | tar zxvf -
+cd ngram-$NGRAM_VERSION
 ./configure
 make -j 2
 make install
 cd ..
-rm -rf opengrm-ngram-$OPENGRM_NGRAM_VERSION
+rm -rf ngram-$NGRAM_VERSION
 # Index libraries
 ldconfig
 
