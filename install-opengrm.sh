@@ -25,10 +25,6 @@ THRAX_VERSION=1.3.0
 PYNINI_VERSION=2.0.8
 SFST_VERSION=1.1.0
 
-# Workaround: set GCC version
-export CC=gcc-8
-export CXX=g++-8
-
 # Install OpenFST
 wget -q -O - http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-$OPENFST_VERSION.tar.gz | tar zxvf -
 cd openfst-$OPENFST_VERSION
