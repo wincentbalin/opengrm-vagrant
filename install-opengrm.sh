@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 #
 # Download and install OpenFST with contributions and all OpenGRM projects
 #
