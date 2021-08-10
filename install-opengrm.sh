@@ -84,7 +84,7 @@ ldconfig
 # Install OpenGRM Thrax
 wget -q -O - http://www.openfst.org/twiki/pub/GRM/ThraxDownload/thrax-$THRAX_VERSION.tar.gz | tar zxvf -
 cd thrax-$THRAX_VERSION
-./configure --enable-bin --enable-readline
+./configure --enable-bin #--enable-readline
 make -j $JOBS
 make install
 cd ..
