@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 # Update packages
 RUN apt-get update
 # Install installation utilities
