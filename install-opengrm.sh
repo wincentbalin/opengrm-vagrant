@@ -25,12 +25,18 @@ THRAX_VERSION=1.3.0
 PYNINI_VERSION=2.0.8
 SFST_VERSION=1.1.0
 
+# Specify compilation jobs
+if [ -n "$JOBS" ]
+then
+    JOBS=1
+fi
+
 # Install OpenFST
 wget -q -O - http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-$OPENFST_VERSION.tar.gz | tar zxvf -
 cd openfst-$OPENFST_VERSION
 sed -i -e 's/c++11/c++14/g' configure
 ./configure --enable-compact-fsts --enable-compress --enable-const-fsts --enable-far --enable-linear-fsts --enable-lookahead-fsts --enable-mpdt --enable-ngram-fsts --enable-pdt --enable-python --enable-special --enable-bin --enable-grm
-make -j 2
+make -j $JOBS
 make install
 cd ..
 rm -rf openfst-$OPENFST_VERSION
@@ -46,7 +52,7 @@ ldconfig
 wget -q -O - http://openfst.org/twiki/pub/Contrib/FstContrib/baumwelch-$BAUMWELCH_VERSION.tar.gz | tar zxvf -
 cd baumwelch-$BAUMWELCH_VERSION
 ./configure
-make -j 2
+make -j $JOBS
 make install
 cd ..
 rm -rf baumwelch-$BAUMWELCH_VERSION
@@ -57,7 +63,7 @@ ldconfig
 wget -q -O - http://openfst.org/twiki/pub/Contrib/FstContrib/categorial-$CATEGORIAL_VERSION.tar.gz | tar zxvf -
 cd categorial-$CATEGORIAL_VERSION
 ./configure
-make -j 2
+make -j $JOBS
 make install
 cd ..
 rm -rf categorial-$CATEGORIAL_VERSION
@@ -68,7 +74,7 @@ ldconfig
 wget -q -O - http://www.openfst.org/twiki/pub/GRM/NGramDownload/ngram-$NGRAM_VERSION.tar.gz | tar zxvf -
 cd ngram-$NGRAM_VERSION
 ./configure
-make -j 2
+make -j $JOBS
 make install
 cd ..
 rm -rf ngram-$NGRAM_VERSION
@@ -79,7 +85,7 @@ ldconfig
 wget -q -O - http://www.openfst.org/twiki/pub/GRM/ThraxDownload/thrax-$THRAX_VERSION.tar.gz | tar zxvf -
 cd thrax-$THRAX_VERSION
 ./configure --enable-bin --enable-readline
-make -j 1  # This is because the parser compilation uses up to 3 GB
+make -j $JOBS
 make install
 cd ..
 rm -rf thrax-$THRAX_VERSION
@@ -100,7 +106,7 @@ ldconfig
 wget -q -O - http://www.openfst.org/twiki/pub/GRM/SFstDownload/sfst-$SFST_VERSION.tar.gz | tar zxvf -
 cd sfst-$SFST_VERSION
 ./configure
-make -j 2
+make -j $JOBS
 make install
 cd ..
 rm -rf sfst-$SFST_VERSION
