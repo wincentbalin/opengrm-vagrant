@@ -26,10 +26,7 @@ PYNINI_VERSION=2.0.9
 SFST_VERSION=1.1.0
 
 # Specify compilation jobs
-if [ -n "$JOBS" ]
-then
-    JOBS=1
-fi
+JOBS="${JOBS:-1}"
 
 # Install OpenFST
 wget -q -O - http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-$OPENFST_VERSION.tar.gz | tar zxvf -
