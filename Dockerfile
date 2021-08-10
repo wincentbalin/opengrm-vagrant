@@ -1,4 +1,6 @@
 FROM ubuntu:20.04
+# No interaction available
+ENV DEBIAN_FRONTEND="noninteractive"
 # Update packages
 RUN apt-get update
 # Install installation utilities
