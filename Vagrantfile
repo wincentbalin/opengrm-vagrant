@@ -18,7 +18,7 @@
 # limitations under the License.
 
 Vagrant.configure("2") do |config|
-    config.vm.box = "ubuntu/bionic64"
+    config.vm.box = "ubuntu/focal64"
 
     config.vm.provider "virtualbox" do |vb|
         vb.gui = false     # we log into here using ssh
@@ -37,10 +37,10 @@ Vagrant.configure("2") do |config|
     apt-get install -y tmux vim mc
 
     # Install OpenFST compilation requirements
-    apt-get install -y build-essential make zlib1g-dev python-dev libreadline6-dev libncurses5-dev
+    apt-get install -y build-essential make zlib1g-dev python3-dev libreadline6-dev libncurses5-dev
 
     # Install Pynini prerequisites
-    apt-get install -y python-setuptools libre2-dev
+    apt-get install -y python3-setuptools cython3 libre2-dev
 
     # Install everything OpenFST and OpenGRM
     /vagrant/install-opengrm.sh
