@@ -45,7 +45,7 @@ fi
 ldconfig
 
 # Install Baum-Welch extension
-wget -q -O - http://openfst.org/twiki/pub/Contrib/FstContrib/baumwelch-$BAUMWELCH_VERSION.tar.gz | tar zxvf -
+wget -q -O - http://www.opengrm.org/twiki/pub/GRM/BaumWelchDownload/baumwelch-$BAUMWELCH_VERSION.tar.gz | tar zxvf -
 cd baumwelch-$BAUMWELCH_VERSION
 ./configure
 make -j $JOBS
