@@ -31,7 +31,6 @@ JOBS="${JOBS:-1}"
 # Install OpenFST
 wget -q -O - http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-$OPENFST_VERSION.tar.gz | tar zxvf -
 cd openfst-$OPENFST_VERSION
-sed -i -e 's/c++11/c++14/g' configure
 ./configure --enable-compact-fsts --enable-compress --enable-const-fsts --enable-far --enable-linear-fsts --enable-lookahead-fsts --enable-mpdt --enable-ngram-fsts --enable-pdt --enable-python --enable-special --enable-bin --enable-grm
 make -j $JOBS
 make install
