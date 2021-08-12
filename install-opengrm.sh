@@ -91,8 +91,7 @@ ldconfig
 # Install OpenGRM Pynini
 wget -q -O - http://www.openfst.org/twiki/pub/GRM/PyniniDownload/pynini-$PYNINI_VERSION.tar.gz | tar zxvf -
 cd pynini-$PYNINI_VERSION
-sed -i '/from os import path/a from io import open' setup.py
-python setup.py install
+python3 setup.py install
 cd ..
 rm -rf pynini-$PYNINI_VERSION
 # Index libraries
