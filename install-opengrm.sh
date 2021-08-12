@@ -100,6 +100,9 @@ ldconfig
 # Install OpenGRM SFST
 wget -q -O - http://www.openfst.org/twiki/pub/GRM/SFstDownload/sfst-$SFST_VERSION.tar.gz | tar zxvf -
 cd sfst-$SFST_VERSION
+sed -i -e 's/c++11/c++17/g' configure
+sed -i -e 's/Minus/f::Minus/g' src/include/sfst/backoff.h src/include/sfst/normalize.h src/include/sfst/state-weights.h
+sed -i -e 's/FLAGS_/FST_FLAGS_/g' src/bin/*.cc src/test/*.cc
 ./configure
 make -j $JOBS
 make install
